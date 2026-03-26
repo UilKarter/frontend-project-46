@@ -5,3 +5,4 @@
 ## Badges
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=UilKarter_frontend-project-46&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=UilKarter_frontend-project-46)
 [![Build](https://github.com/UilKarter/frontend-project-46/actions/workflows/build.yml/badge.svg)](https://github.com/UilKarter/frontend-project-46/actions/workflows/build.yml)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=UilKarter_frontend-project-46&metric=coverage)](https://sonarcloud.io/summary/new_code?id=UilKarter_frontend-project-46)
