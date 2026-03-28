@@ -2,7 +2,7 @@ import buildTree from './buildTree.js'
 import parseFile from './parsers.js'
 import getFormatter from './formatters/index.js'
 
-export function genDiff(filepath1, filepath2, format = 'stylish') {
+const genDiff = (filepath1, filepath2, format = 'stylish') => {
   try {
     const data1 = parseFile(filepath1)
     const data2 = parseFile(filepath2)
@@ -12,3 +12,5 @@ export function genDiff(filepath1, filepath2, format = 'stylish') {
     return error.message
   }
 }
+
+export default genDiff
