@@ -1,24 +1,34 @@
 import path from 'path'
 import { genDiff } from '../src/index.js'
-import resultJSON from '../__fixtures__/resultJSON.js'
-import resultYaml from '../__fixtures__/resultYAML.js'
+import resultNested from '../__fixtures__/resultNested.js'
 import resultPlain from '../__fixtures__/resultPlain.js'
+import resultJSON from '../__fixtures__/resultJSON.js'
 
-const resolvePath = filePath => path.resolve(process.cwd(), `__fixtures__/`, filePath)
+const resolvePath = (filepath) => path.resolve(process.cwd(), '__fixtures__/', filepath)
+const formats = ['json', 'yaml', 'yml']
 
-test('Check nested JSON', () => {
-  expect(genDiff(resolvePath('file1.json'), resolvePath('file2.json'))).toEqual(resultJSON)
-})
-test('Check YAML', () => {
-  expect(genDiff(resolvePath('file1.yaml'), resolvePath('file2.yaml'))).toEqual(resultYaml)
-})
-test('Check YML', () => {
-  expect(genDiff(resolvePath('file1.yml'), resolvePath('file2.yml'))).toEqual(resultYaml)
-})
-test('Check plain', () => {
-  expect(genDiff(resolvePath('file1.json'), resolvePath('file2.json'), 'plain')).toEqual(resultPlain)
-})
-test('Check fake format', () => {
-  expect(genDiff(resolvePath('file1.json'), resolvePath('file2.json'), 'fake')).toEqual(`Unknown format: fake`)
-})
+describe('gendiff', () => {
+  describe.each(formats)('Format: %s', (format) => {
+    const filepath1 = resolvePath(`file1.${format}`)
+    const filepath2 = resolvePath(`file2.${format}`)
 
+    test('stylish format (default)', () => {
+      expect(genDiff(filepath1, filepath2)).toEqual(resultNested)
+      expect(genDiff(filepath1, filepath2, 'stylish')).toEqual(resultNested)
+    })
+
+    test('plain format', () => {
+      expect(genDiff(filepath1, filepath2, 'plain')).toEqual(resultPlain)
+    })
+
+    test('json format', () => {
+      expect(genDiff(filepath1, filepath2, 'json')).toEqual(resultJSON)
+    })
+  })
+
+  test('fake format should return error message', () => {
+    const filepath1 = resolvePath('file1.json')
+    const filepath2 = resolvePath('file2.json')
+    expect(genDiff(filepath1, filepath2, 'fake')).toEqual('Unknown format: fake')
+  })
+})
