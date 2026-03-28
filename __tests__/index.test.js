@@ -1,6 +1,6 @@
 import path from 'path'
 import { genDiff } from '../src/index.js'
-import resultNested from '../__fixtures__/resultNested.js'
+import resultStylish from '../__fixtures__/resultStylish.js'
 import resultPlain from '../__fixtures__/resultPlain.js'
 import resultJSON from '../__fixtures__/resultJSON.js'
 
@@ -13,8 +13,8 @@ describe('gendiff', () => {
     const filepath2 = resolvePath(`file2.${format}`)
 
     test('stylish format (default)', () => {
-      expect(genDiff(filepath1, filepath2)).toEqual(resultNested)
-      expect(genDiff(filepath1, filepath2, 'stylish')).toEqual(resultNested)
+      expect(genDiff(filepath1, filepath2)).toEqual(resultStylish)
+      expect(genDiff(filepath1, filepath2, 'stylish')).toEqual(resultStylish)
     })
 
     test('plain format', () => {

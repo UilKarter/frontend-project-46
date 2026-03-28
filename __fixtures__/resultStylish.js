@@ -1,4 +1,4 @@
-const resultNested = `{
+const resultStylish = `{
     common: {
       + follow: false
         setting1: Value 1
@@ -43,4 +43,4 @@ const resultNested = `{
     }
 }`
 
-export default resultNested
+export default resultStylish
