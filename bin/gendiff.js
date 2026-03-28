@@ -10,9 +10,10 @@ program
   .version('1.0.0', '-V, --version', 'output the version number')
   .helpOption('-h, --help', 'display help for command')
   .option('-f, --format <type>', 'output format', 'stylish')
-  .arguments('<filepath1> <filepath2>')
-  .action((filepath1, filepath2, options) => {
-    const diff = genDiff(filepath1, filepath2, options.format)
+  .arguments('<filepath1> <filepath2> [format]')
+  .action((filepath1, filepath2, format, options) => {
+    const outputFormat = format || options.format
+    const diff = genDiff(filepath1, filepath2, outputFormat)
     console.log(diff)
   })
 
