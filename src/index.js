@@ -8,7 +8,8 @@ const genDiff = (filepath1, filepath2, format = 'stylish') => {
     const data2 = parseFile(filepath2)
     const tree = buildTree(data1, data2)
     return getFormatter(format, tree)
-  } catch (error) {
+  }
+  catch (error) {
     return error.message
   }
 }

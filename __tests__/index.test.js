@@ -1,10 +1,10 @@
 import path from 'path'
-import { genDiff } from '../src/index.js'
+import genDiff from '../src/index.js'
 import resultStylish from '../__fixtures__/resultStylish.js'
 import resultPlain from '../__fixtures__/resultPlain.js'
 import resultJSON from '../__fixtures__/resultJSON.js'
 
-const resolvePath = (filepath) => path.resolve(process.cwd(), '__fixtures__/', filepath)
+const resolvePath = filepath => path.resolve(process.cwd(), '__fixtures__/', filepath)
 const formats = ['json', 'yaml', 'yml']
 
 describe('gendiff', () => {

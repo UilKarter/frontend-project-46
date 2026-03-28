@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-const getPath = (pathParts) => pathParts.join('.')
+const getPath = pathParts => pathParts.join('.')
 
 const formatValue = (value) => {
   if (value === null) return 'null'

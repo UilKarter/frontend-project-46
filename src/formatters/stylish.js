@@ -2,8 +2,8 @@ import _ from 'lodash'
 
 const space = ' '
 const spaceMultiplier = 4
-const getIndent = (depth) => space.repeat(spaceMultiplier * depth - 2)
-const getClosingIndent = (depth) => space.repeat(spaceMultiplier * depth - spaceMultiplier)
+const getIndent = depth => space.repeat(spaceMultiplier * depth - 2)
+const getClosingIndent = depth => space.repeat(spaceMultiplier * depth - spaceMultiplier)
 
 const formatLines = (lines, depth) => [
   '{',
@@ -16,7 +16,7 @@ const stringify = (data, depth) => {
     return String(data)
   }
   const keys = _.keys(data)
-  const lines = keys.map((key) => `${getIndent(depth)}  ${key}: ${stringify(data[key], depth + 1)}`)
+  const lines = keys.map(key => `${getIndent(depth)}  ${key}: ${stringify(data[key], depth + 1)}`)
   return formatLines(lines, depth)
 }
 
@@ -24,11 +24,11 @@ const stylish = (tree) => {
   const processNode = (node, depth) => {
     switch (node.type) {
       case 'root': {
-        const result = node.children.flatMap((child) => processNode(child, depth))
+        const result = node.children.flatMap(child => processNode(child, depth))
         return formatLines(result, depth)
       }
       case 'nested': {
-        const children = node.children.flatMap((child) => processNode(child, depth + 1))
+        const children = node.children.flatMap(child => processNode(child, depth + 1))
         return `${getIndent(depth)}  ${node.key}: ${formatLines(children, depth + 1)}`
       }
       case 'added': {

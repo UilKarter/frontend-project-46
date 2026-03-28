@@ -1,10 +1,10 @@
-import stylish from "./stylish.js"
-import plain from "./plain.js"
+import stylish from './stylish.js'
+import plain from './plain.js'
 
 const formatters = {
   stylish,
   plain,
-  json: (tree) => JSON.stringify(tree, null, 2)
+  json: tree => JSON.stringify(tree, null, 2),
 }
 
 export default (format, tree) => {

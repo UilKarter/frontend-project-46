@@ -31,7 +31,7 @@ const buildChildren = (obj1, obj2) => {
       return {
         type: 'unchanged',
         key,
-        value: value1
+        value: value1,
       }
     }
     else throw new Error(`Unknown changes`)
@@ -40,7 +40,7 @@ const buildChildren = (obj1, obj2) => {
 
 const buildTree = (obj1, obj2) => ({
   type: 'root',
-  children: buildChildren(obj1, obj2)
+  children: buildChildren(obj1, obj2),
 })
 
 export default buildTree
