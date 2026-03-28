@@ -1,14 +1,14 @@
 import buildTree from './buildTree.js'
-import parseFIle from './parsers.js'
-import stylish from './formatters/stylish.js'
+import parseFile from './parsers.js'
+import getFormatter from './formatters/index.js'
 
 export function genDiff(filepath1, filepath2, format = 'stylish') {
-  const data1 = parseFIle(filepath1)
-  const data2 = parseFIle(filepath2)
-  const tree = buildTree(data1, data2)
-  switch (format) {
-    case 'stylish':
-      return stylish(tree)
-    default: throw new Error(`Unknown format type: ${format}`)
+  try {
+    const data1 = parseFile(filepath1)
+    const data2 = parseFile(filepath2)
+    const tree = buildTree(data1, data2)
+    return getFormatter(format, tree)
+  } catch (error) {
+    return error.message
   }
 }

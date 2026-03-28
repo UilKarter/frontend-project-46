@@ -5,9 +5,11 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=UilKarter_frontend-project-46&metric=coverage)](https://sonarcloud.io/summary/new_code?id=UilKarter_frontend-project-46)
 
 ### Gendiff asciinema
-Plain JSON:
+JSON:
 [![asciicast](https://asciinema.org/a/iwoP8xzV9AlycEy3.svg)](https://asciinema.org/a/iwoP8xzV9AlycEy3)
-Plain YAML/YML:
+YAML/YML:
 [![asciicast](https://asciinema.org/a/WVpp5jF6cXfYyUvi.svg)](https://asciinema.org/a/WVpp5jF6cXfYyUvi)
-Nested JSON:
+Nested:
 [![asciicast](https://asciinema.org/a/l2yUfeFfSBZ0WB6y.svg)](https://asciinema.org/a/l2yUfeFfSBZ0WB6y)
+Plain:
+[![asciicast](https://asciinema.org/a/Xyp3AJQZlaqvtQmQ.svg)](https://asciinema.org/a/Xyp3AJQZlaqvtQmQ)
