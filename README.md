@@ -5,6 +5,7 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=UilKarter_frontend-project-46&metric=coverage)](https://sonarcloud.io/summary/new_code?id=UilKarter_frontend-project-46)
 
 ## Установка
+```bash
 1. Клонируйте репозиторий:
    git clone https://github.com/UilKarter/frontend-project-46.git
 
@@ -20,7 +21,7 @@
    (на некоторых системах может потребоваться sudo npm link)
 5. Проверьте установку, получив справку:
    введите gendiff -h
-
+```
 ## Использование
    После установки команда gendiff будет доступна в терминале:
    ```bash
@@ -44,7 +45,7 @@
 
     # Сравнить файлы разных форматов
     gendiff __fixtures__/file1.json __fixtures__/file2.yaml
-    ```
+```
 ## Примеры работы:
 ### Сравнение двух JSON-файлов:
 [![asciicast](https://asciinema.org/a/iwoP8xzV9AlycEy3.svg)](https://asciinema.org/a/iwoP8xzV9AlycEy3)
